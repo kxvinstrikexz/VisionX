@@ -1,0 +1,21 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+
+# IDE / OS files
+.DS_Store
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Temporary runtime files
+runs/uploaded_temp.*
+*.log

@@ -1,0 +1,38 @@
+dataset:
+  raw_dir: "data/raw/eurosat100"
+  processed_dir: "data/processed"
+  image_size: 64
+  # input_mode: 'single' (1-channel NIR) or 'multispectral' (3-channel NIR+SWIR1+SWIR2)
+  input_mode: "single"
+  nir_band_idx: 7       # B08 (Near-Infrared ~842nm)
+  swir1_band_idx: 11    # B11 (Short-Wave Infrared 1 ~1610nm)
+  swir2_band_idx: 12    # B12 (Short-Wave Infrared 2 ~2190nm)
+  red_band_idx: 3       # B04 (Red ~665nm)
+  green_band_idx: 2     # B03 (Green ~560nm)
+  blue_band_idx: 1      # B02 (Blue ~490nm)
+  norm_factor_rgb: 3000.0
+  norm_factor_ir: 4000.0
+  train_split: 0.75
+  val_split: 0.15
+  test_split: 0.10
+
+model:
+  name: "SatelliteUNet"
+  in_channels: 1        # 1 for single NIR, 3 for multispectral IR
+  out_channels: 3       # RGB (3 channels)
+  init_features: 32
+
+training:
+  batch_size: 16
+  num_epochs: 40
+  learning_rate: 0.0003
+  weight_decay: 0.00001
+  l1_weight: 1.0
+  ssim_weight: 0.5
+  gradient_weight: 0.2
+  save_every: 5
+
+paths:
+  checkpoint_dir: "runs/checkpoints"
+  samples_dir: "runs/samples"
+  metrics_path: "runs/metrics.json"

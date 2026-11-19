@@ -1,0 +1,35 @@
+{
+  "classes": [
+    "AnnualCrop",
+    "Forest",
+    "HerbaceousVegetation",
+    "Highway",
+    "Industrial",
+    "Pasture",
+    "PermanentCrop",
+    "Residential",
+    "River",
+    "SeaLake"
+  ],
+  "counts": {
+    "train": 70,
+    "val": 10,
+    "test": 20
+  },
+  "total_samples": 100,
+  "bands": {
+    "B01_AEROSOL": 0,
+    "B02_BLUE": 1,
+    "B03_GREEN": 2,
+    "B04_RED": 3,
+    "B05_RE1": 4,
+    "B06_RE2": 5,
+    "B07_RE3": 6,
+    "B08_NIR": 7,
+    "B8A_NARROW_NIR": 8,
+    "B09_WATER_VAPOR": 9,
+    "B10_CIRRUS": 10,
+    "B11_SWIR1": 11,
+    "B12_SWIR2": 12
+  }
+}
